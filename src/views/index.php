@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProAcademic Hub</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/src/views/css/style.css">
 </head>
 <body>
     <main >
         <div class="systemLogin">
-            <form class="formLogin" action="src/views/system.html" method="post">
+            <form class="formLogin" action="/src/views/system.html" method="post">
                 <div class="userLogin">
                     <label for="user">Usuário:</label>
                     <input type="text" name="user" id="user" required>

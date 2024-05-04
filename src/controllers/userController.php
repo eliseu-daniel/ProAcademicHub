@@ -16,6 +16,6 @@ class userController extends controller
     
     public function index()
     {
-        $this->view('views/index');
+        $this->view('index');
     }
 }
