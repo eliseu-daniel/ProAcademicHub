@@ -9,7 +9,7 @@
 <body>
     <main >
         <div class="systemLogin">
-            <form class="formLogin" action="src/views/system.html" method="post">
+            <form class="formLogin" action="/src/views/system.html" method="post">
                 <div class="userLogin">
                     <label for="user">Usuário:</label>
                     <input type="text" name="user" id="user" required>
