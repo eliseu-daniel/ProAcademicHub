@@ -7,5 +7,5 @@ https://getcomposer.org/download/.
 ```
 
 ```bash
-composer init
+composer install
 ```

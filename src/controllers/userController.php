@@ -2,7 +2,6 @@
 
 namespace src\controllers;
 
-use src\models\model;
 use src\models\userModel;
 
 class userController extends controller
@@ -11,12 +10,12 @@ class userController extends controller
 
     public function __construct()
     {
-        $this->model = new model();
+        $this->model = new userModel();
     }
     
     
     public function index()
     {
-        $this->view('user/index');
+        $this->view('views/index');
     }
 }
