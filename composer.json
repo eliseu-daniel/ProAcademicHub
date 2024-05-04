@@ -1,0 +1,17 @@
+{
+    "name": "eliseulinux/pro-academic-hub",
+    "description": "Projeto desenvolvido para a aula de Engenharia de computação",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "ProAcademicHub\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "eliseu daniel",
+            "email": "eliseudaniel29@gmail.com"
+        }
+    ],
+    "require": {}
+}
