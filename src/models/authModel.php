@@ -2,7 +2,7 @@
 
 use src\models\userModel;
 
-require_once 'userModel.php';
+require 'userModel.php';
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 $username = $_POST['user'];
