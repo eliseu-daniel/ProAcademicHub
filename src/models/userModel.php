@@ -20,7 +20,7 @@ class userModel extends model
 
         if(!empty($result))
         {
-            //entrar no sistema
+            header('Location: ../app.php');
         }
         else
         {

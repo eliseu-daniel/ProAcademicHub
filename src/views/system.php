@@ -46,6 +46,9 @@
                         <li><a href="#">Configurações do Sistema</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="../controllers/authController.php?action=loggout">Sair</a>
+                </li>
             </ul>
         </nav>
     </header>
