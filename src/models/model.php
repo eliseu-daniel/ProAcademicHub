@@ -10,7 +10,7 @@ class model
 {
     public function connection(string $sql)
     {
-        $host = 'localhost';
+        $host = '127.0.0.1';
         $dbName = 'ProAcademicHub';
         $userName = 'root';
         $pwd = '';

@@ -18,4 +18,9 @@ class userController extends controller
     {
         $this->view('index');
     }
+
+    public function system()
+    {
+        $this->view('system');
+    }
 }

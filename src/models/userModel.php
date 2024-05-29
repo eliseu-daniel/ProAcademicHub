@@ -11,6 +11,9 @@ class userModel extends model
 {
     public function validateUser($username, $pass)
     {
+
+        
+
         $sql = "SELECT * FROM Usuarios WHERE nome = :username AND senha = :pass";
 
         $params = [
@@ -22,11 +25,11 @@ class userModel extends model
 
         if(!empty($result))
         {
-            header('Location: ../app.php');
+            $this->system();
         }
         else
         {
-            //mensagem de erro pro usuario
+            $erro[] = "Dados Invalidos";
         }
     }
 }

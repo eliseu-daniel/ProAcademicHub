@@ -4,16 +4,15 @@ namespace src\controllers;
 
 class controller
 {
-    public function view($view)
+    public function view($view, $data = [])
     {
+        extract($data);
         require_once $_SERVER['DOCUMENT_ROOT'] . "/src/views/{$view}.php";
     }
-    
-    public function loggout(){
-        session_start();
-        session_unset();
-        session_destroy();
-        header('Location: ../app.php');
+
+    public function redirect($url)
+    {
+        header("Location:{$url}");
     }
 
     

@@ -9,7 +9,20 @@
 <body>
     <main >
         <div class="systemLogin">
-            <form class="formLogin" action="/src/models/authModel.php?action=login" method="post">
+
+        <?php
+            if (!empty($errors)) 
+            {
+                echo '<ul>';
+                foreach ($erro as $error)
+                {
+                    echo "<li style='color: red;'>$error</li>";
+                }
+                echo '</ul>';
+            }
+        ?>
+
+            <form class="formLogin" action="/src/models/userModel.php?validateUser" method="post">
                 <div class="userLogin">
                     <label for="user">Usuário:</label>
                     <input type="text" name="user" id="user" required>

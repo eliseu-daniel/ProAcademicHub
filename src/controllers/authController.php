@@ -1,19 +1,26 @@
 <?php
-
+/*
 use src\controllers\controller;
 
-require_once 'controller.php';
+use src\models\userModel;
+
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 
-$authController = new controller();
+$username = $_POST['user'];
+$pass = $_POST['userPw'];
+
+
+
 
 switch($action)
 {
-    case 'loggout':
-        $authController->loggout();
+    case 'login':
+        $authModel->validateUser($username, $pass);
         break;
     default:
         header('Location: ../app.php');
         exit;
 }
+
+*/
