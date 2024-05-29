@@ -8,16 +8,17 @@ use PDOException;
 
 class model
 {
+    private $host = '127.0.0.1';
+    private $dbName = 'ProAcademicHub';
+    private $userName = 'root';
+    private $pwd = '';
+
     public function connection(string $sql)
     {
-        $host = '127.0.0.1';
-        $dbName = 'ProAcademicHub';
-        $userName = 'root';
-        $pwd = '';
 
         try
         {
-            $connection = new PDO("mysql:host={$host};dbname={$dbName}", $userName, $pwd);
+            $connection = new PDO("mysql:host={$this->host};dbname={$this->dbName}", $this->userName, $this->pwd);
             $preparation = $connection->prepare($sql);
             $preparation->execute();   
             return $preparation->fetchAll(PDO::FETCH_OBJ);

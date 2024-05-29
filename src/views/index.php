@@ -22,7 +22,7 @@
             }
         ?>
 
-            <form class="formLogin" action="/src/models/userModel.php?validateUser" method="post">
+            <form class="formLogin" action="/src/controllers/userController.php" method="post">
                 <div class="userLogin">
                     <label for="user">Usuário:</label>
                     <input type="text" name="user" id="user" required>

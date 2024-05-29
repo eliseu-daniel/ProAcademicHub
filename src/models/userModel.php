@@ -5,15 +5,10 @@ namespace src\models;
 use mysqli;
 use PDO;
 
-require 'model.php';
-
 class userModel extends model
 {
     public function validateUser($username, $pass)
     {
-
-        
-
         $sql = "SELECT * FROM Usuarios WHERE nome = :username AND senha = :pass";
 
         $params = [
@@ -25,10 +20,12 @@ class userModel extends model
 
         if(!empty($result))
         {
-            $this->system();
+            echo "tudo certo";
+            //$this->system();
         }
         else
         {
+            echo "sei la se vira ai";
             $erro[] = "Dados Invalidos";
         }
     }
