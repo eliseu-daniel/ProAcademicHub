@@ -2,9 +2,9 @@
 
 namespace src\controllers;
 
-use src\models\userModel;
+use src\models\UserModel;
 
-class userController extends controller
+class UserController extends Controller
 {
     private $model;
 

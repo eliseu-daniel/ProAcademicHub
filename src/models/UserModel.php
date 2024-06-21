@@ -2,10 +2,9 @@
 
 namespace src\models;
 
-use mysqli;
 use PDO;
 
-class userModel extends model
+class UserModel extends Model
 {
     public function validateUser($username, $pass)
     {

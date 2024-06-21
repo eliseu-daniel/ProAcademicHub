@@ -2,7 +2,7 @@
 
 namespace src\controllers;
 
-class controller
+class Controller
 {
     public function view($view, $data = [])
     {

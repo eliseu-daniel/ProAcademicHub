@@ -6,7 +6,7 @@ use PDO;
 use PDOException;
 
 
-class model
+class Model
 {
     private $host = '127.0.0.1';
     private $dbName = 'ProAcademicHub';
