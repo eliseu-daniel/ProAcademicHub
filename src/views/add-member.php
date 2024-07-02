@@ -16,18 +16,21 @@
                 <li><a href="#projects">Projetos</a>
                     <ul>
                         <li><a href="create-project.html">Cadastrar Projeto</a></li>
+                        <li><a href="edit-projects.html">Editar Projetos</a></li>
                         <li><a href="view-projects.html">Visualizar Lista de Projetos</a></li>
                     </ul>
                 </li>
                 <li><a href="#tasks">Tarefas</a>
                     <ul>
                         <li><a href="add-task.html">Adicionar Tarefa</a></li>
+                        <li><a href="edit-task.html">Editar Tarefa</a></li>
                         <li><a href="view-tasks.html">Visualizar Lista de Tarefas</a></li>
                     </ul>
                 </li>
                 <li><a href="#collaboration">Colaboração</a>
                     <ul>
                         <li><a href="add-member.html">Adicionar Membros</a></li>
+                        <li><a href="delete-member.html">Excluir Membros</a></li>
                         <li><a href="assign-task.html">Atribuir Tarefas</a></li>
                         <li><a href="comments.html">Comentários</a></li>
                     </ul>
@@ -39,28 +42,40 @@
                 </li>
                 <li><a href="#reports">Relatórios</a>
                     <ul>
-                        <li><a href="#">Relatório de Progresso</a></li>
-                        <li><a href="#">Relatório de Desempenho</a></li>
+                        <li><a href="progress-report.html">Relatório de Progresso</a></li>
+                        <li><a href="performance-report.html">Relatório de Desempenho</a></li>
                     </ul>
                 </li>
                 <li><a href="#settings">Configurações</a>
                     <ul>
-                        <li><a href="#">Gerenciar Usuários</a></li>
-                        <li><a href="#">Configurações do Sistema</a></li>
+                        <li><a href="system-settings.html">Configurações do Sistema</a></li>
+                        <li><a href="manage-user.html">Gerenciar Usuários</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="../controllers/authController.php?action=loggout">Sair</a>
+                    <a href="suport.html">Suporte</a>
+                </li>
+                <li>
+                    <a href="index.html">Sair</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main class="CadProj">
         <h1 class="CadProj titulo">Adicionar Membros</h1>
-
+        <form action="">  
+            <label for="projeto">Projeto</label>
+            <input type="text" name="projeto" id="projeto">
+            <label for="nome">Nome do Membro</label>
+            <input type="text" name="nome" id="nome">
+            <div class="btn">
+                <button class="btn cancelar">Cancelar</button>
+                <button class="btn salvar" type="submit">Salvar</button>
+            </div>
+        </form>
     </main>
     <footer>
         InnovaTech Solutions @2024
-    </footer>    
+    </footer>
 </body>
 </html>

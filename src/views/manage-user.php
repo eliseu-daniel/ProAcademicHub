@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atribuir Tarefas</title>
+    <title>Configurações de Usuários</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -62,7 +62,18 @@
         </nav>
     </header>
     <main class="CadProj">
-        <h1 class="CadProj titulo">Atribuir Tarefas</h1>
+        <h1 class="CadProj titulo">Configurações de Usuários</h1>
+        <ul>
+            <li>
+                <a href="#">Cadastrar</a>
+            </li>
+            <li>
+                <a href="#">Acesso</a>
+            </li>
+            <li>
+                <a href="#">Configurações do Usuário</a>
+            </li>
+        </ul>
     </main>
     <footer>
         InnovaTech Solutions @2024
