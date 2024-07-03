@@ -4,6 +4,8 @@ namespace src\controllers;
 
 use src\models\UserModel;
 
+session_start();
+
 class UserController extends Controller
 {
     private $model;
@@ -31,10 +33,11 @@ class UserController extends Controller
         if($this->model->validateUser($username, $pass))
         {
             $this->system();
+            $this->redirect('/src/views/system.php');
         }else
         {
-            echo "Dados Invalidos";
-            $erro[] = "Dados Invalidos";
+            $_SESSION['erro'][]  = "Dados Inválidos";
+            $this->redirect('/src/index');
         }
     }
 }

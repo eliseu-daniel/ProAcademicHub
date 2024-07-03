@@ -79,6 +79,16 @@ aside {
     margin: 0 auto;
 }
 
+.formLogin ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    background-color: red;
+    color: #f0f0f0;
+    border: 5px solid red;
+}
+
 .userLogin, .userPass, .btnLogin{
     margin-bottom: 10px;
 }

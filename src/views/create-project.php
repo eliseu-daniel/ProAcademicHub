@@ -11,52 +11,52 @@
         <nav>
             <ul>
                 <li>
-                    <a href="system.html">Home</a>
+                    <a href="system.php">Home</a>
                 </li>
                 <li><a href="#projects">Projetos</a>
                     <ul>
-                        <li><a href="create-project.html">Cadastrar Projeto</a></li>
-                        <li><a href="edit-projects.html">Editar Projetos</a></li>
-                        <li><a href="view-projects.html">Visualizar Lista de Projetos</a></li>
+                        <li><a href="create-project.php">Cadastrar Projeto</a></li>
+                        <li><a href="edit-projects.php">Editar Projetos</a></li>
+                        <li><a href="view-projects.php">Visualizar Lista de Projetos</a></li>
                     </ul>
                 </li>
                 <li><a href="#tasks">Tarefas</a>
                     <ul>
-                        <li><a href="add-task.html">Adicionar Tarefa</a></li>
-                        <li><a href="edit-task.html">Editar Tarefa</a></li>
-                        <li><a href="view-tasks.html">Visualizar Lista de Tarefas</a></li>
+                        <li><a href="add-task.php">Adicionar Tarefa</a></li>
+                        <li><a href="edit-task.php">Editar Tarefa</a></li>
+                        <li><a href="view-tasks.php">Visualizar Lista de Tarefas</a></li>
                     </ul>
                 </li>
                 <li><a href="#collaboration">Colaboração</a>
                     <ul>
-                        <li><a href="add-member.html">Adicionar Membros</a></li>
-                        <li><a href="delete-member.html">Excluir Membros</a></li>
-                        <li><a href="assign-task.html">Atribuir Tarefas</a></li>
-                        <li><a href="comments.html">Comentários</a></li>
+                        <li><a href="add-member.php">Adicionar Membros</a></li>
+                        <li><a href="delete-member.php">Excluir Membros</a></li>
+                        <li><a href="assign-task.php">Atribuir Tarefas</a></li>
+                        <li><a href="comments.php">Comentários</a></li>
                     </ul>
                 </li>
                 <li><a href="#calendar">Calendário</a>
                     <ul>
-                        <li><a href="view-calendar.html">Visualizar Calendário</a></li>
+                        <li><a href="view-calendar.php">Visualizar Calendário</a></li>
                     </ul>
                 </li>
                 <li><a href="#reports">Relatórios</a>
                     <ul>
-                        <li><a href="progress-report.html">Relatório de Progresso</a></li>
-                        <li><a href="performance-report.html">Relatório de Desempenho</a></li>
+                        <li><a href="progress-report.php">Relatório de Progresso</a></li>
+                        <li><a href="performance-report.php">Relatório de Desempenho</a></li>
                     </ul>
                 </li>
                 <li><a href="#settings">Configurações</a>
                     <ul>
-                        <li><a href="system-settings.html">Configurações do Sistema</a></li>
-                        <li><a href="manage-user.html">Gerenciar Usuários</a></li>
+                        <li><a href="system-settings.php">Configurações do Sistema</a></li>
+                        <li><a href="manage-user.php">Gerenciar Usuários</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="suport.html">Suporte</a>
+                    <a href="suport.php">Suporte</a>
                 </li>
                 <li>
-                    <a href="index.html">Sair</a>
+                    <a href="src/">Sair</a>
                 </li>
             </ul>
         </nav>

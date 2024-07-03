@@ -1,3 +1,9 @@
+<?php
+session_start();
+$erro = isset($_SESSION['erro']) ? $_SESSION['erro'] : [];
+unset($_SESSION['erro']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,20 +15,20 @@
 <body>
     <main >
         <div class="systemLogin">
-
-        <?php
-            if (!empty($errors)) 
-            {
-                echo '<ul>';
-                foreach ($erro as $error)
-                {
-                    echo "<li style='color: red;'>$error</li>";
-                }
-                echo '</ul>';
-            }
-        ?>
-
             <form class="formLogin" action="/src/login.php" method="post">
+                
+                <?php
+                    if (!empty($erro)) 
+                    {
+                        echo '<ul>';
+                        foreach ($erro as $error)
+                        {
+                            echo "<li>$error</li>";
+                        }
+                        echo '</ul>';
+                    }
+                ?>
+
                 <div class="userLogin">
                     <label for="user">Usuário:</label>
                     <input type="text" name="user" id="user" required>
