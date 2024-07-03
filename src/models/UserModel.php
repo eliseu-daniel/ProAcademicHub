@@ -16,7 +16,7 @@ class UserModel extends Model
         ];
 
         $result = $this->connection($sql, $params);
-
+        
         if(!empty($result))
         {
             echo "tudo certo";

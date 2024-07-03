@@ -9,6 +9,7 @@ class UserController extends Controller
     private $model;
 
     
+    
     public function __construct()
     {
         $this->model = new userModel();
@@ -24,7 +25,7 @@ class UserController extends Controller
     {
         $this->view('system');
     }
-
+    
     public function login($username, $pass)
     {
         $this->model->validateUser($username, $pass);
