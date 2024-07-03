@@ -28,6 +28,13 @@ class UserController extends Controller
     
     public function login($username, $pass)
     {
-        $this->model->validateUser($username, $pass);
+        if($this->model->validateUser($username, $pass))
+        {
+            $this->system();
+        }else
+        {
+            echo "Dados Invalidos";
+            $erro[] = "Dados Invalidos";
+        }
     }
 }

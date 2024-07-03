@@ -17,15 +17,6 @@ class UserModel extends Model
 
         $result = $this->connection($sql, $params);
         
-        if(!empty($result))
-        {
-            echo "tudo certo";
-            //$this->system();
-        }
-        else
-        {
-            echo "sei la se vira ai";
-            $erro[] = "Dados Invalidos";
-        }
+        return !empty($result);
     }
 }

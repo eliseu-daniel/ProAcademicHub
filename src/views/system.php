@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Gerenciamento de Projetos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="views/css/style.css">
 </head>
 <body>
     <header>
@@ -47,7 +47,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="../controllers/authController.php?action=loggout">Sair</a>
+                    <a href="/src/app.php">Sair</a>
                 </li>
             </ul>
         </nav>

@@ -13,14 +13,14 @@ class Model
     private $userName = 'root';
     private $pwd = '';
 
-    public function connection(string $sql)
+    public function connection(string $sql, array $params = [])
     {
 
         try
         {
             $connection = new PDO("mysql:host={$this->host};dbname={$this->dbName}", $this->userName, $this->pwd);
             $preparation = $connection->prepare($sql);
-            $preparation->execute();   
+            $preparation->execute($params);   
             return $preparation->fetchAll(PDO::FETCH_OBJ);
         }catch(PDOException $e)
         {
