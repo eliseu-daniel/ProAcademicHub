@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Projeto</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="views/css/style.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li>
-                    <a href="system.php">Home</a>
+                    <a href="views/system.php">Home</a>
                 </li>
                 <li><a href="#projects">Projetos</a>
                     <ul>

@@ -33,14 +33,14 @@ class UserController extends Controller
         if($this->model->validateUser($username, $pass))
         {
             $this->system();
-            $this->redirect('/src/views/system.php');
+            $this->redirect('system');
         }else
         {
             $_SESSION['erro'][]  = "Dados Inválidos";
             $this->redirect('/src/index');
         }
     }
-    //testarrr
+
     public function createProjectScreen()
     {
         $this->view('create-project');
@@ -48,11 +48,14 @@ class UserController extends Controller
     //testar
     public function createProject($title, $description, $dateI, $dateF, $teacher)
     {
-        $this->model->createProject($title, $description, $dateI, $dateF, $teacher);
-        $this->redirect('/src/views/system.php');
+        if($this->model->createProject($title, $description, $dateI, $dateF, $teacher))
+        {
+            //mensagem dados salvo com suesso
+            $this->createProjectScreen();
+            $this->redirect('/src/views/system.php');
+        }
     }
 
-    //testar
     public function viewProject()
     {
         $projects = $this->model->viewProject();
