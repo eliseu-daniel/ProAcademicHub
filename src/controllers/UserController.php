@@ -40,7 +40,7 @@ class UserController extends Controller
             $this->redirect('/src/index');
         }
     }
-    //testar
+    //testarrr
     public function createProjectScreen()
     {
         $this->view('create-project');
@@ -56,8 +56,8 @@ class UserController extends Controller
     public function viewProject()
     {
         $projects = $this->model->viewProject();
-        $this->view('/view-projects', [
-            'projetos' => $projects
+        $this->view('view-projects', [
+            'projects' => $projects
         ]);
     }
 }

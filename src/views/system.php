@@ -14,7 +14,7 @@
                     <ul>
                         <li><a href="create-project.php">Cadastrar Projeto</a></li>
                         <li><a href="edit-projects.php">Editar Projetos</a></li>
-                        <li><a href="view-projects.php">Visualizar Lista de Projetos</a></li>
+                        <li><a href="\src/viewP.php">Visualizar Lista de Projetos</a></li>
                     </ul>
                 </li>
                 <li><a href="#tasks">Tarefas</a>
