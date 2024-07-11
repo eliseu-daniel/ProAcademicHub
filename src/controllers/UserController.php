@@ -40,4 +40,24 @@ class UserController extends Controller
             $this->redirect('/src/index');
         }
     }
+    //testar
+    public function createProjectScreen()
+    {
+        $this->view('create-project');
+    }
+    //testar
+    public function createProject($title, $description, $dateI, $dateF, $teacher)
+    {
+        $this->model->createProject($title, $description, $dateI, $dateF, $teacher);
+        $this->redirect('/src/views/system.php');
+    }
+
+    //testar
+    public function viewProject()
+    {
+        $projects = $this->model->viewProject();
+        $this->view('/view-projects', [
+            'projetos' => $projects
+        ]);
+    }
 }
