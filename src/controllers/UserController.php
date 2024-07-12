@@ -43,17 +43,24 @@ class UserController extends Controller
 
     public function createProjectScreen()
     {
-        $this->view('create-project');
+        $users = $this->model->getAllUsers();
+        $this->view('create-project', [
+            'users' => $users
+        ]);
     }
     //testar
     public function createProject($title, $description, $dateI, $dateF, $teacher)
     {
         if($this->model->createProject($title, $description, $dateI, $dateF, $teacher))
         {
-            //mensagem dados salvo com suesso
-            $this->createProjectScreen();
-            $this->redirect('/src/views/system.php');
+            $_SESSION['success'] = "Projeto criado com sucesso!";
+        }else
+        {
+            $_SESSION['erro'][]  = "Dados Inválidos";
         }
+        
+        $this->redirect('system');
+
     }
 
     public function viewProject()

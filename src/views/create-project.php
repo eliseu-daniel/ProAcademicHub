@@ -1,3 +1,12 @@
+<?php
+session_start();
+$erro = isset($_SESSION['erro']) ? $_SESSION['erro'] : [];
+unset($_SESSION['erro']);
+
+$sucess = isset($_SESSION['sucess']) ? $_SESSION['sucess'] : [];
+unset($_SESSION['sucess']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +73,32 @@
     <main class="CadProj">
         <h1 class="CadProj titulo">Cadastrar Projeto</h1>
         <!-- adicionar method posteriormente -->
-        <form action="" > 
+        <form action="createP.php" method="post" > 
+
+            <?php
+                        if (!empty($erro)) 
+                        {
+                            echo '<ul>';
+                            foreach ($erro as $error)
+                            {
+                                echo "<li>$error</li>";
+                            }
+                            echo '</ul>';
+                        }
+            ?>
+
+            <?php
+                if (!empty($sucess)) 
+                {
+                    echo '<ul>';
+                    foreach ($sucess as $sucesso)
+                    {
+                        echo "<li>$sucesso</li>";
+                    }
+                        echo '</ul>';
+                }
+            ?>
+
             <div class="titulo2"> 
                 <label for="titulo2">Título</label>
                 <input type="text" name="titulo2" id="titulo2">
@@ -95,12 +129,17 @@
             </div>
             <div class="professor">
                 <label for="professor">Professor</label>
-                <input type="text" name="professor" id="professor">
+                <select name="prof" id="prof">
+                    <?php foreach ($users as $user): ?>
+                        <option value="<?= $user->usuario_id ?>"><?= $user->nome ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
             <div class="btn">
                 <button class="btn cancelar">Cancelar</button>
                 <button class="btn salvar" type="submit" class="btn salvar">Salvar</button>
             </div>
+
         </form>
     </main>
     <footer>

@@ -13,6 +13,7 @@ class Controller
     public function redirect($url)
     {
         header("Location:/src/views/{$url}.php");
+        exit();
     }
 
     
