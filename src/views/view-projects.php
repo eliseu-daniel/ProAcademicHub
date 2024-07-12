@@ -90,7 +90,7 @@
                             <?= $projeto->data_termino ?>
                         </td>
                         <td>
-                            <?= $projeto->criador_id ?>
+                            <?= $projeto->nome ?>
                         </td>
                     </tr>
                 <?php } ?>

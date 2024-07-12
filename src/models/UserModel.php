@@ -32,7 +32,7 @@ class UserModel extends Model
     {
         if($title != null && $description != null && $dateI != null && $dateF != null && $teacher != null)
         {
-            $sql = "INSERT INTO Projetos(titulo, descricao, data_inicio, data_termino, criador_id) " 
+            $sql = "INSERT INTO Projetos(titulo, descricao, data_inicio, data_termino, usuario_id) " 
             . "VALUES (:title, :desc, :dateI, :dateF, :teacher)";
     
             $params = [
@@ -51,7 +51,9 @@ class UserModel extends Model
     //testar
     public function viewProject()
     {
-        $sql = "SELECT * FROM Projetos";
+        $sql = "SELECT Projetos.titulo, Projetos.descricao, Projetos.data_inicio, Projetos.data_termino, Usuarios.nome 
+            FROM Projetos
+            INNER JOIN Usuarios ON Projetos.usuario_id = Usuarios.usuario_id";
 
         $result = $this->connection($sql);
 
