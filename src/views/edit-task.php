@@ -1,3 +1,8 @@
+<?php
+    $id = $_GET['id'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,13 +78,13 @@
                 <input type="text" name="professor" id="professor">
             </div>
             <div class="alunos">
-                <label for="aluno1">Nova Nome</label>
+                <label for="aluno1">Novo Nome</label>
                 <input type="text" name="aluno1" id="aluno1">
                 <label for="aluno1">Nova Atribuição</label>
                 <input type="text" name="aluno1" id="aluno1">
             </div>
             <div class="btn">
-                <button class="btn cancelar">Cancelar</button>
+                <button class="btn cancelar">Excluir</button>
                 <button class="btn salvar" type="submit" class="btn salvar">Editar</button>
             </div>
         </form>

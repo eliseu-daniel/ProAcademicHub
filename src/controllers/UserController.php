@@ -48,7 +48,7 @@ class UserController extends Controller
             'users' => $users
         ]);
     }
-    //testar
+    
     public function createProject($title, $description, $dateI, $dateF, $teacher)
     {
         if($this->model->createProject($title, $description, $dateI, $dateF, $teacher))
@@ -69,5 +69,26 @@ class UserController extends Controller
         $this->view('view-projects', [
             'projects' => $projects
         ]);
+    }
+
+    public function editProjectView($id)
+    {
+        $projects = $this->model->editProjectView($id);
+        $this->view('edit-projects', [
+            'projects' => $projects
+        ]);
+    }
+
+    function editProject($id, $title, $description, $dateI, $dateF)
+    {
+        if($this->model->editProject($id, $title, $description, $dateI, $dateF))
+        {
+            $_SESSION['success'] = "Projeto criado com sucesso!";
+        }else
+        {
+            $_SESSION['erro'][]  = "Dados Inválidos";
+        }
+        
+        $this->redirect('system');
     }
 }

@@ -13,14 +13,14 @@
                 <li><a href="#projects">Projetos</a>
                     <ul>
                         <li><a href="\src/createPScreen.php">Cadastrar Projeto</a></li>
-                        <li><a href="edit-projects.php">Editar Projetos</a></li>
+                    <!-- <li><a href="edit-projects.php">Editar Projetos</a></li> -->
                         <li><a href="\src/viewP.php">Visualizar Lista de Projetos</a></li>
                     </ul>
                 </li>
                 <li><a href="#tasks">Tarefas</a>
                     <ul>
                         <li><a href="add-task.php">Adicionar Tarefa</a></li>
-                        <li><a href="edit-task.php">Editar Tarefa</a></li>
+                        <!--<li><a href="edit-task.php">Editar Tarefa</a></li> -->
                         <li><a href="view-tasks.php">Visualizar Lista de Tarefas</a></li>
                     </ul>
                 </li>

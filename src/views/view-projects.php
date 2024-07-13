@@ -92,6 +92,11 @@
                         <td>
                             <?= $projeto->nome ?>
                         </td>
+                        <td class="btn btn-secondary">
+                            <a href="\src/editPScreen.php?id=<?= $projeto->projeto_id ?>"> 
+                                Editar 
+                            </a>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>
