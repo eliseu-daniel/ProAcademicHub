@@ -12,9 +12,9 @@
             <ul>
                 <li><a href="#projects">Projetos</a>
                     <ul>
-                        <li><a href="\src/createPScreen.php">Cadastrar Projeto</a></li>
+                        <li><a href="/src/create-projects">Cadastrar Projeto</a></li>
                     <!-- <li><a href="edit-projects.php">Editar Projetos</a></li> -->
-                        <li><a href="\src/viewP.php">Visualizar Lista de Projetos</a></li>
+                        <li><a href="/src/view-projects">Visualizar Lista de Projetos</a></li>
                     </ul>
                 </li>
                 <li><a href="#tasks">Tarefas</a>

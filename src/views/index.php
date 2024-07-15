@@ -15,7 +15,7 @@ unset($_SESSION['erro']);
 <body>
     <main >
         <div class="systemLogin">
-            <form class="formLogin" action="/src/login.php" method="post">
+            <form class="formLogin" method="post">
                 
                 <?php
                     if (!empty($erro)) 

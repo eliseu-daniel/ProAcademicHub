@@ -28,16 +28,36 @@ class UserController extends Controller
         $this->view('system');
     }
     
-    public function login($username, $pass)
+    // public function login($username, $pass)
+    // {
+    //     if($this->model->validateUser($username, $pass))
+    //     {
+    //         $this->system();
+    //         $this->redirect('system');
+    //     }else
+    //     {
+    //         $_SESSION['erro'][]  = "Dados Inválidos";
+    //         $this->redirect('/src/index');
+    //     }
+    // }
+    public function login()
     {
-        if($this->model->validateUser($username, $pass))
+        if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
-            $this->system();
-            $this->redirect('system');
-        }else
-        {
-            $_SESSION['erro'][]  = "Dados Inválidos";
-            $this->redirect('/src/index');
+            $username = $_POST['user'];
+            $pass = $_POST['userPw'];
+            $user = $this->model->validateUser($username, $pass);
+
+            if ($user) {
+                $_SESSION['user_id'] = $user['usuario_id'];
+                $this->redirect('system');
+            }else
+            {
+                $_SESSION['erro'][]  = "Dados Inválidos";
+                $this->index();
+            }
+        }else{
+            $this->index();
         }
     }
 
