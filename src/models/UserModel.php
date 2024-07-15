@@ -17,7 +17,7 @@ class UserModel extends Model
 
         $result = $this->connection($sql, $params);
         
-        return !empty($result);
+        return !empty($result)? $result[0] : null;
     }
 
     public function getAllUsers()
@@ -89,6 +89,17 @@ class UserModel extends Model
     
             $result = $this->connection($sql, $params);
         
+        return $result;
+    }
+
+    function deleteProject($id)
+    {
+        $sql = "DELETE FROM Projetos WHERE projeto_id = :id";
+
+        $params = [ ':id' => $id];
+
+        $result = $this->connection($sql, $params);
+
         return $result;
     }
 }
