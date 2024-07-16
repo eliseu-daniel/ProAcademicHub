@@ -132,4 +132,22 @@ class UserController extends Controller
         $this->model->deleteProject($id);
         $this->redirect('view-projects');
     }
+
+    public function viewTasks()
+    {
+        $this->authenticate();
+        $tasks = $this->model->viewTasks();
+        $this->view('view-tasks', [
+            'tasks' => $tasks
+        ]);
+    }
+
+    public function editTask($id)
+    {
+        $this->authenticate();
+        $tasks = $this->model->editTask($id);
+        $this->view('edit-task', [
+            'tasks' => $tasks
+        ]);
+    }
 }

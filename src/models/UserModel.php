@@ -102,4 +102,17 @@ class UserModel extends Model
 
         return $result;
     }
+
+    function viewTasks()
+    {
+        $sql = "SELECT * FROM Tarefas";
+
+        $result = $this->connection($sql);
+
+        return $result;
+    }
+    function editTask($id)
+    {
+        
+    }
 }

@@ -12,7 +12,7 @@ class Controller
 
     public function redirect($url)
     {
-        header("Location:/src/$url");
+        header("Location:/src/$url.php");
         exit();
     }
 

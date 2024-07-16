@@ -35,6 +35,14 @@ switch($request)
         $controller = new UserController();
         $controller->deleteProject($matches[1]);
         break;
+    case'/src/view-tasks':
+        $controller = new UserController();
+        $controller->viewTasks();
+        break;
+    case(preg_match('/\/edit-task\/(\d+)/', $request, $matches) ? true : false):
+        $controller = new UserController();
+        $controller->editTask($matches[1]);
+        break;
     default:
         http_response_code(404);
         echo "Page not found";

@@ -10,6 +10,49 @@
     <?php include 'template/header.php'; ?>
     <main class="CadProj">
         <h1 class="CadProj titulo">Visualizar Lista de Tarefas</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Descrição</th>
+                    <th>Status</th>
+                    <th>Data Inicio</th>
+                    <th>Data Fim</th>
+                    <th>Projeto</th>
+                    <th>Responsavel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($tasks as $task) {?>
+                <tr>
+                    <td>
+                        <?= $task->titulo ?>
+                    </td>
+                    <td>
+                        <?= $task->descricao ?>
+                    </td>
+                    <td>
+                        <?= $task->status ?>
+                    </td>
+                    <td>
+                        <?= $task->data_inicio ?>
+                    </td>
+                    <td>
+                        <?= $task->data_termino ?>
+                    </td>
+                    <td>
+                        <?= $task->projeto_id ?>
+                    </td>
+                    <td>
+                        <?= $task->responsavel_id?>
+                    </td>
+                    <td>
+                        <a href="edit-task/<?= $task->tarefa_id?>">Editar</a>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
     </main>
     <footer>
         InnovaTech Solutions @2024
