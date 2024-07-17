@@ -45,7 +45,7 @@ class UserController extends Controller
 
             if ($user) {
                 $_SESSION['user_id'] = $user->usuario_id;
-                $this->redirect('home');
+                header("Location: /src/home");
             }else
             {
                 $_SESSION['erro'][]  = "Dados Inválidos";
@@ -149,5 +149,29 @@ class UserController extends Controller
         $this->view('edit-task', [
             'tasks' => $tasks
         ]);
+    }
+
+    public function addTasks()
+    {
+        $this->authenticate();
+        $this->view('add-task');
+        if($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+            $titulo = $_POST['titulo2'];
+            $descricao = $_POST['descricao'];
+            $status = $_POST['status'];
+            $dataInicio = $_POST['dataInicio'];
+            $dataFim = $_POST['dataFim'];
+            $projeto = $_POST['projeto'];
+            $aluno = $_POST['aluno1'];
+            if($this->model->addTasks($titulo, $descricao, $status, $dataInicio, $dataFim, $projeto, $aluno))
+            {
+                $_SESSION['success'][] = "Projeto criado com sucesso!";
+                $this->view('add-task');
+            }else
+            {
+                $_SESSION['erro'][]  = "Dados Inválidos";
+            }
+        }
     }
 }

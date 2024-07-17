@@ -39,6 +39,10 @@ switch($request)
         $controller = new UserController();
         $controller->viewTasks();
         break;
+    case'/src/add-task':
+        $controller = new UserController();
+        $controller->addTasks();
+        break;
     case(preg_match('/\/edit-task\/(\d+)/', $request, $matches) ? true : false):
         $controller = new UserController();
         $controller->editTask($matches[1]);

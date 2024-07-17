@@ -111,6 +111,26 @@ class UserModel extends Model
 
         return $result;
     }
+
+    function addTasks($titulo, $descricao, $status, $dataInicio, $dataFim, $projeto, $aluno)
+    {
+        $sql = "INSERT INTO Tarefas(titulo, descricao, status, data_inicio, data_termino, projeto_id, responsavel_id) 
+            VALUES(:titulo, :descricao, :status, :data_inicio, :data_termino, :projeto_id, :responsavel_id)";
+        $params = [
+            ':titulo' => $titulo, 
+            ':descricao' => $descricao, 
+            ':status' => $status, 
+            ':data_inicio' => $dataInicio, 
+            ':data_termino' => $dataFim, 
+            ':projeto_id' => $projeto, 
+            ':responsavel_id' => $aluno
+        ];
+
+        $result = $this->connection($sql, $params);
+
+        return $result;
+    }
+
     function editTask($id)
     {
         
