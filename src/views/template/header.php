@@ -58,6 +58,9 @@
                 <li>
                     <a href="/src/logout">Sair</a>
                 </li>
+                <li style="color: white;">
+                    <?php echo $_SESSION['user_id'] ?>
+                </li>
             </ul>
         </nav>
     </header>

@@ -4,7 +4,6 @@ namespace src\controllers;
 
 use src\models\UserModel;
 
-
 class UserController extends Controller
 {
     private $model;
@@ -14,7 +13,6 @@ class UserController extends Controller
         session_start();
         $this->model = new userModel();
     }
-    
     
     public function index()
     {
@@ -26,14 +24,14 @@ class UserController extends Controller
         $this->view('system');
     }
     
-    private function authenticate()
+    public function authenticate()
     {
         if(!isset($_SESSION['user_id']))
         {
             header("Location: /src/login");
         }
     }
-
+    
     public function login()
     {
         if($_SERVER['REQUEST_METHOD'] == 'POST')
@@ -65,7 +63,8 @@ class UserController extends Controller
     public function createProjectScreen()
     {
         $this->authenticate();
-        $users = $this->model->getAllUsers();
+        $idGlobal = $_SESSION['user_id'];
+        $users = $this->model->getAllUsers($idGlobal);
         $this->view('create-project', [
             'users' => $users
         ]);
@@ -153,11 +152,11 @@ class UserController extends Controller
     public function addTasks()
     {
         $this->authenticate();
-        $tasks = $this->model->getProjectsUsers();
-        echo '<pre>';
-        print_r($tasks);
-        echo '</pre>';
+        $idGlobal = $_SESSION['user_id'];
+        $users = $this->model->getAllUsers($idGlobal);
+        $tasks = $this->model->getAllProjects($idGlobal);
         $this->view('add-task', [
+            'users' => $users,
             'tasks' => $tasks
         ]);
         if($_SERVER['REQUEST_METHOD'] == 'POST')

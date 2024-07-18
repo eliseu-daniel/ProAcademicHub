@@ -20,10 +20,15 @@ class UserModel extends Model
         return !empty($result)? $result[0] : null;
     }
 
-    public function getAllUsers()
+    public function getAllUsers($idGlobal)
     {
-        $sql = "SELECT usuario_id, nome FROM Usuarios";
-        $result = $this->connection($sql);
+        $sql = "SELECT usuario_id, nome FROM Usuarios WHERE usuario_id = :userid";
+
+        $params = [
+            ':userid' => $idGlobal
+        ];
+
+        $result = $this->connection($sql, $params);
         return $result;
     }
 
@@ -112,14 +117,15 @@ class UserModel extends Model
         return $result;
     }
 
-    function getProjectsUsers()
+    function getAllProjects($idGlobal)
     {
-        $sql = "SELECT Projetos.projeto_id, Projetos.titulo, Usuarios.usuario_id, Usuarios.nome 
-        FROM Tarefas
-        INNER JOIN Projetos ON Tarefas.projeto_id = Projetos.projeto_id 
-        INNER JOIN Usuarios ON Tarefas.responsavel_id = Usuarios.usuario_id";
+        $sql = "SELECT projeto_id, titulo FROM Projetos WHERE usuario_id = :userid";
+
+        $params = [
+            ':userid' => $idGlobal
+        ];
         
-        return $this->connection($sql);
+        return $this->connection($sql, $params);
     }
 
     function addTasks($titulo, $descricao, $status, $dataInicio, $dataFim, $projeto, $aluno)

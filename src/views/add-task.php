@@ -47,8 +47,8 @@
             <div class="alunos">
                 <label for="aluno1">Aluno</label>
                 <select name="aluno1" id="aluno1">
-                    <?php foreach ($tasks as $task): ?>
-                        <option value="<?= $task->responsavel_id?>"><?= $task->nome ?></option>
+                    <?php foreach ($users as $user): ?>
+                        <option value="<?= $user->usuario_id?>"><?= $user->nome ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
