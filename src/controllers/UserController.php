@@ -23,7 +23,6 @@ class UserController extends Controller
     
     public function system()
     {
-        session_start();
         $this->view('system');
     }
     
@@ -154,7 +153,13 @@ class UserController extends Controller
     public function addTasks()
     {
         $this->authenticate();
-        $this->view('add-task');
+        $tasks = $this->model->getProjectsUsers();
+        echo '<pre>';
+        print_r($tasks);
+        echo '</pre>';
+        $this->view('add-task', [
+            'tasks' => $tasks
+        ]);
         if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $titulo = $_POST['titulo2'];

@@ -112,10 +112,20 @@ class UserModel extends Model
         return $result;
     }
 
+    function getProjectsUsers()
+    {
+        $sql = "SELECT Projetos.projeto_id, Projetos.titulo, Usuarios.usuario_id, Usuarios.nome 
+        FROM Tarefas
+        INNER JOIN Projetos ON Tarefas.projeto_id = Projetos.projeto_id 
+        INNER JOIN Usuarios ON Tarefas.responsavel_id = Usuarios.usuario_id";
+        
+        return $this->connection($sql);
+    }
+
     function addTasks($titulo, $descricao, $status, $dataInicio, $dataFim, $projeto, $aluno)
     {
-        $sql = "INSERT INTO Tarefas(titulo, descricao, status, data_inicio, data_termino, projeto_id, responsavel_id) 
-            VALUES(:titulo, :descricao, :status, :data_inicio, :data_termino, :projeto_id, :responsavel_id)";
+        $sql = "INSERT INTO Tarefas(titulo, descricao, status, data_inicio, data_termino, projeto_id, responsavel_id)
+         VALUES (:titulo, :descricao, :status, :data_inicio, :data_termino, :projeto_id, :responsavel_id)";
         $params = [
             ':titulo' => $titulo, 
             ':descricao' => $descricao, 

@@ -10,7 +10,7 @@
     <main class="CadProj">
         <h1 class="CadProj titulo">Adicionar Tarefa</h1>
          <!-- adicionar method posteriormente -->
-         <form method="POST"> 
+         <form method="POST">
             <div class="titulo2"> 
                 <label for="titulo2">Nome da Tarefa</label>
                 <input type="text" name="titulo2" id="titulo2">
@@ -36,15 +36,25 @@
                     <input type="date" name="dataFim" id="dataFim">
                 </div>
             </div>
-
             <div class="professor">
                 <label for="projeto">Projeto</label>
-                <input type="text" name="projeto" id="projeto">
+                <select name="projeto" id="projeto">
+                    <?php foreach ($tasks as $task): ?>
+                        <option value="<?= $task->projeto_id?>"><?= $task->titulo ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
             <div class="alunos">
                 <label for="aluno1">Aluno</label>
-                <input type="text" name="aluno1" id="aluno1">
+                <select name="aluno1" id="aluno1">
+                    <?php foreach ($tasks as $task): ?>
+                        <option value="<?= $task->responsavel_id?>"><?= $task->nome ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
+            <?php
+                
+            ?>
             <div class="btn">
                 <button class="btn cancelar">Cancelar</button>
                 <button class="btn salvar" type="submit" class="btn salvar">Salvar</button>
