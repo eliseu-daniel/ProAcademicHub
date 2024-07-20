@@ -147,8 +147,30 @@ class UserModel extends Model
         return $result;
     }
 
-    function editTask($id)
+    function editTaskView($id)
     {
-        
+        $sql = "SELECT * FROM Tarefas WHERE tarefa_id = :id";
+
+        $params = [
+            ':id' => $id
+        ];
+
+        $result = $this->connection($sql, $params);
+
+        return $result;
+    }
+
+    //ver pq n ta subindo
+    function editTask($id, $titulo, $aluno)
+    {
+        $sql = "UPDATE Tarefas SET titulo = :titulo, responsavel_id = :aluno WHERE tarefa_id = :id";
+        $params = [
+            ':titulo' => $titulo,
+            ':aluno' => $aluno,
+            ':id' => $id
+        ];
+
+        $result = $this->connection($sql, $params);
+        return $result;
     }
 }

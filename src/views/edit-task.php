@@ -15,21 +15,23 @@
     <?php include 'template/header.php'; ?>
     <main class="CadProj">
         <h1 class="CadProj titulo">Editar Tarefas</h1>
-        <form action="" > 
+        <form method="post"> 
+            <?php foreach($tasks as $task) {?>
             <div class="alunos">
                 <label for="aluno1">Aluno</label>
-                <input type="text" name="aluno1" id="aluno1">
+                <input type="text" name="aluno1" id="aluno1" value="<?= $task->responsavel_id ?>">
             </div>
             <div class="professor">
                 <label for="professor">Tarefa</label>
-                <input type="text" name="professor" id="professor">
+                <input type="text" name="professor" id="professor" value="<?= $task->titulo ?>">
             </div>
             <div class="alunos">
                 <label for="aluno1">Novo Nome</label>
-                <input type="text" name="aluno1" id="aluno1">
+                <input type="text" name="aluno2" id="aluno2">
                 <label for="aluno1">Nova Atribuição</label>
-                <input type="text" name="aluno1" id="aluno1">
+                <input type="text" name="tarefa" id="tarefa">
             </div>
+        <?php } ?>
             <div class="btn">
                 <button class="btn cancelar">Excluir</button>
                 <button class="btn salvar" type="submit" class="btn salvar">Editar</button>

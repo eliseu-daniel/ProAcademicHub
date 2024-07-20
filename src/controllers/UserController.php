@@ -143,10 +143,23 @@ class UserController extends Controller
     public function editTask($id)
     {
         $this->authenticate();
-        $tasks = $this->model->editTask($id);
+        $tasks = $this->model->editTaskView($id);
         $this->view('edit-task', [
             'tasks' => $tasks
         ]);
+        if($_SERVER['REQUEST_METHOD'] == "POST")
+        {
+            $titulo = $_POST['tarefa'];
+            $aluno = $_POST['aluno2'];
+            if($this->model->editTask($id, $titulo, $aluno))
+            {
+                $_SESSION['success'][] = "Projeto criado com sucesso!";
+                $this->viewTasks();
+            }else
+            {
+                $_SESSION['erro'][]  = "Dados Inválidos";
+            }
+        }
     }
 
     public function addTasks()
