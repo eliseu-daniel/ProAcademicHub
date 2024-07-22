@@ -47,6 +47,10 @@ switch($request)
         $controller = new UserController();
         $controller->editTask($matches[1]);
         break;
+        case (preg_match('/\/delete-task\/(\d+)/', $request, $matches) ? true : false):
+            $controller = new UserController();
+            $controller->deleteTask($matches[1]);
+            break;
     default:
         http_response_code(404);
         echo "Page not found";

@@ -140,6 +140,7 @@ class UserController extends Controller
         ]);
     }
 
+    //ver pq nao esta atualizando
     public function editTask($id)
     {
         $this->authenticate();
@@ -189,6 +190,15 @@ class UserController extends Controller
             {
                 $_SESSION['erro'][]  = "Dados Inválidos";
             }
+        }
+    }
+
+    public function deleteTask($id)
+    {
+        $this->authenticate();
+        if($this->model->deleteTask($id))
+        {
+            $this->viewTasks();
         }
     }
 }

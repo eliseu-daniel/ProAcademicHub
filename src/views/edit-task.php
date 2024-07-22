@@ -33,7 +33,7 @@
             </div>
         <?php } ?>
             <div class="btn">
-                <button class="btn cancelar">Excluir</button>
+            <a href="/src/delete-task/<?= $task->tarefa_id ?>" class="btn cancelar">Excluir</a>
                 <button class="btn salvar" type="submit" class="btn salvar">Editar</button>
             </div>
         </form>

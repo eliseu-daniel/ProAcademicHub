@@ -173,4 +173,16 @@ class UserModel extends Model
         $result = $this->connection($sql, $params);
         return $result;
     }
+
+    function deleteTask($id)
+    {
+        $sql = "DELETE FROM Tarefas WHERE tarefa_id = :id";
+        $params = [
+            ':id' => $id
+        ];
+
+        $result = $this->connection($sql, $params);
+
+        return $result;
+    }
 }
