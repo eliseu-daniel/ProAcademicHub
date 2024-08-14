@@ -9,9 +9,9 @@ use PDOException;
 class Model
 {
     private $host = '127.0.0.1';
-    private $dbName = 'ProAcademicHub';
+    private $dbName = 'proacademichub';
     private $userName = 'root';
-    private $pwd = '';
+    private $pwd = '91776213';
 
     public function connection(string $sql, array $params = [])
     {

@@ -201,4 +201,64 @@ class UserController extends Controller
             $this->viewTasks();
         }
     }
+
+    public function addMember()
+    {
+        $this->authenticate();
+
+    }
+
+    public function deleteMember()
+    {
+        $this->authenticate();
+
+    }
+
+    public function assignTask()
+    {
+        $this->authenticate();
+
+    }
+
+    public function comments()
+    {
+        $this->authenticate();
+
+    }
+
+    public function viewCalendar()
+    {
+        $this->authenticate();
+
+    }
+
+    public function progressReport()
+    {
+        $this->authenticate();
+
+    }
+
+    public function performanceReport()
+    {
+        $this->authenticate();
+
+    }
+
+    public function systemSettings()
+    {
+        $this->authenticate();
+
+    }
+
+    public function manageUser()
+    {
+        $this->authenticate();
+
+    }
+
+    public function suport()
+    {
+        $this->authenticate();
+        
+    }
 }
