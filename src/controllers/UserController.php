@@ -168,7 +168,7 @@ class UserController extends Controller
         $this->authenticate();
         $idGlobal = $_SESSION['user_id'];
         $users = $this->model->getAllUsers($idGlobal);
-        $tasks = $this->model->getAllProjects($idGlobal);
+        $tasks = $this->model->getAllUsers($idGlobal); // arrumar isso aqui
         $this->view('add-task', [
             'users' => $users,
             'tasks' => $tasks
@@ -205,6 +205,12 @@ class UserController extends Controller
     public function addMember()
     {
         $this->authenticate();
+        $users = $this->model->getAllUsers($idGlobal);
+        
+        $this->view('add-member', [
+            'users' => $users
+        ]);
+        
 
     }
 
