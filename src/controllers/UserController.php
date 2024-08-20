@@ -194,11 +194,31 @@ class UserController extends Controller
             'users' => $users,
             'tasks' => $member
         ]);
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $nome = $_POST['nome'];
+            $projeto = $_POST['projeto'];
+            if ($this->model->addMember($nome, $projeto)) {
+                $this->addMember();
+            }
+        }
     }
 
     public function deleteMember()
     {
         $this->authenticate();
+        $idGlobal = $_SESSION['user_id'];
+        $users = $this->model->getAllUsers($idGlobal);
+        $member = $this->model->getAllProjects($idGlobal);
+        $this->view('delete-member', [
+            'users' => $users,
+            'tasks' => $member
+        ]);
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $id = $_POST['nome'];
+            if ($this->model->deleteMember($id)) {
+                $this->addMember();
+            }
+        }
     }
 
     public function assignTask()

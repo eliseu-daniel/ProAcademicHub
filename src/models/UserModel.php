@@ -183,4 +183,30 @@ class UserModel extends Model
 
         return $result;
     }
+
+    function addMember($nome, $projeto)
+    {
+        $sql = "INSERT INTO Membros(projeto_id, usuario_id) VALUES(projeto_id = :projeto, usuario_id = :nome)";
+
+        $params = [
+            ':projeto' => $projeto,
+            ':nome' => $nome
+        ];
+
+        $result = $this->connection($sql, $params);
+
+        return $result;
+    }
+
+    function deleteMember($id)
+    {
+        $sql = "DELETE INTO Membros WHERE membro_id = :id";
+        $params = [
+            ':id' => $id
+        ];
+
+        $result = $this->connection($sql, $params);
+
+        return $result;
+    }
 }

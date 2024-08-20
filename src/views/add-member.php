@@ -11,7 +11,7 @@
     <?php include 'template/header.php'; ?>
     <main class="CadProj">
         <h1 class="CadProj titulo">Adicionar Membros</h1>
-        <form action="">
+        <form method="POST">
             <div>
                 <label for="projeto">Projeto</label>
                 <!-- <input type="text" name="projeto" id="projeto"> -->
