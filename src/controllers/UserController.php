@@ -31,6 +31,17 @@ class UserController extends Controller
         }
     }
 
+    //mexer para trazer o nome do usuario
+    public function user()
+    {
+        $this->authenticate();
+        $idGlobal = $_SESSION['user_id'];
+        $users = $this->model->getAllUsers($idGlobal);
+        $this->view('template/header', [
+            'users' => $users
+        ]);
+    }
+
     public function login()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

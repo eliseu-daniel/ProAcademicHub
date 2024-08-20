@@ -58,9 +58,11 @@
                 <li>
                     <a href="/src/logout">Sair</a>
                 </li>
+                <?php foreach ($users as $user) { ?>
                 <li style="color: white;">
-                    <?php echo $_SESSION['user_id'] ?>
+                    <?= $user->nome ?>
                 </li>
+                <?php } ?>
             </ul>
         </nav>
     </header>
