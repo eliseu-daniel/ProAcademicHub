@@ -16,8 +16,8 @@ class UserModel extends Model
         ];
 
         $result = $this->connection($sql, $params);
-        
-        return !empty($result)? $result[0] : null;
+
+        return !empty($result) ? $result[0] : null;
     }
 
     public function getAllUsers($idGlobal)
@@ -34,11 +34,10 @@ class UserModel extends Model
 
     public function createProject($title, $description, $dateI, $dateF, $teacher)
     {
-        if($title != null && $description != null && $dateI != null && $dateF != null && $teacher != null)
-        {
-            $sql = "INSERT INTO Projetos(titulo, descricao, data_inicio, data_termino, usuario_id) " 
-            . "VALUES (:title, :desc, :dateI, :dateF, :teacher)";
-    
+        if ($title != null && $description != null && $dateI != null && $dateF != null && $teacher != null) {
+            $sql = "INSERT INTO Projetos(titulo, descricao, data_inicio, data_termino, usuario_id) "
+                . "VALUES (:title, :desc, :dateI, :dateF, :teacher)";
+
             $params = [
                 ':title'   => $title,
                 ':desc'    => $description,
@@ -46,11 +45,10 @@ class UserModel extends Model
                 ':dateF'   => $dateF,
                 ':teacher' => $teacher
             ];
-    
+
             $result = $this->connection($sql, $params);
         }
         return $result;
-
     }
 
     public function viewProject()
@@ -66,14 +64,14 @@ class UserModel extends Model
 
     public function editProjectView($id)
     {
-        
+
         $sql = "SELECT Projetos.projeto_id, Projetos.titulo, Projetos.descricao, Projetos.data_inicio, Projetos.data_termino, Usuarios.nome 
             FROM Projetos
             INNER JOIN Usuarios ON Projetos.usuario_id = Usuarios.usuario_id WHERE Projetos.projeto_id = :id";
 
-            $params = [
-                ':id' => $id
-            ];
+        $params = [
+            ':id' => $id
+        ];
 
         $result = $this->connection($sql, $params);
 
@@ -83,17 +81,17 @@ class UserModel extends Model
     function editProject($id, $title, $description, $dateI, $dateF)
     {
         $sql = "UPDATE Projetos SET titulo = :title, descricao = :desc, data_inicio = :dateI, data_termino = :dateF WHERE projeto_id = :id";
-    
-            $params = [
-                ':title'   => $title,
-                ':desc'    => $description,
-                ':dateI'   => $dateI,
-                ':dateF'   => $dateF,
-                ':id'      => $id
-            ];
-    
-            $result = $this->connection($sql, $params);
-        
+
+        $params = [
+            ':title'   => $title,
+            ':desc'    => $description,
+            ':dateI'   => $dateI,
+            ':dateF'   => $dateF,
+            ':id'      => $id
+        ];
+
+        $result = $this->connection($sql, $params);
+
         return $result;
     }
 
@@ -101,7 +99,7 @@ class UserModel extends Model
     {
         $sql = "DELETE FROM Projetos WHERE projeto_id = :id";
 
-        $params = [ ':id' => $id];
+        $params = [':id' => $id];
 
         $result = $this->connection($sql, $params);
 
@@ -124,7 +122,7 @@ class UserModel extends Model
         $params = [
             ':userid' => $idGlobal
         ];
-        
+
         return $this->connection($sql, $params);
     }
 
@@ -133,12 +131,12 @@ class UserModel extends Model
         $sql = "INSERT INTO Tarefas(titulo, descricao, status, data_inicio, data_termino, projeto_id, responsavel_id)
          VALUES (:titulo, :descricao, :status, :data_inicio, :data_termino, :projeto_id, :responsavel_id)";
         $params = [
-            ':titulo' => $titulo, 
-            ':descricao' => $descricao, 
-            ':status' => $status, 
-            ':data_inicio' => $dataInicio, 
-            ':data_termino' => $dataFim, 
-            ':projeto_id' => $projeto, 
+            ':titulo' => $titulo,
+            ':descricao' => $descricao,
+            ':status' => $status,
+            ':data_inicio' => $dataInicio,
+            ':data_termino' => $dataFim,
+            ':projeto_id' => $projeto,
             ':responsavel_id' => $aluno
         ];
 
@@ -160,7 +158,6 @@ class UserModel extends Model
         return $result;
     }
 
-    //ver pq n ta subindo
     function editTask($id, $titulo, $aluno)
     {
         $sql = "UPDATE Tarefas SET titulo = :titulo, responsavel_id = :aluno WHERE tarefa_id = :id";
@@ -171,6 +168,7 @@ class UserModel extends Model
         ];
 
         $result = $this->connection($sql, $params);
+
         return $result;
     }
 
