@@ -16,12 +16,12 @@
                 <label for="projeto">Projeto</label>
                 <select name="projeto" id="projeto">
                     <?php foreach ($tasks as $task): ?>
-                        <option value="<?= $task->projeto_id ?>"><?= $task->titulo ?></option>
+                        <option value="<?= $task->projeto_id ?>"><?= $task->tituloP ?></option>
                     <?php endforeach; ?>
                 </select>
                 <label for="nome">Nome do Membro</label>
                 <select name="nome" id="nome">
-                    <?php foreach ($users as $member): ?>
+                    <?php foreach ($users as $user): ?>
                         <option value="<?= $user->usuario_id ?>"><?= $user->nome ?></option>
                     <?php endforeach; ?>
                 </select>

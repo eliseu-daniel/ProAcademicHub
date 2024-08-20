@@ -210,6 +210,7 @@ class UserController extends Controller
         }
     }
 
+    // dar uma olhada nessa bagaça e refazer a parte de puxar os usuarios
     public function deleteMember()
     {
         $this->authenticate();
@@ -231,40 +232,56 @@ class UserController extends Controller
     public function assignTask()
     {
         $this->authenticate();
+        $this->view('assign-task');
+        //terminar a tela view
     }
 
     public function comments()
     {
         $this->authenticate();
-    }
+        $this->view('comments');
+        //terminar a tela view
+    }  
 
     public function viewCalendar()
     {
         $this->authenticate();
+        $this->view('view-calendar');
+        //terminar
     }
 
     public function progressReport()
     {
         $this->authenticate();
+        $this->view('progress-report');
+        //terminar
     }
 
     public function performanceReport()
     {
         $this->authenticate();
+        $this->view('performance-report');
+        //terminar
     }
 
     public function systemSettings()
     {
         $this->authenticate();
+        $this->view('system-settings');
+        //terminar
     }
 
     public function manageUser()
     {
         $this->authenticate();
+        $this->view('manage-user');
+        //terminar
     }
 
     public function suport()
     {
         $this->authenticate();
+        $this->view('suport');
+        //terminar
     }
 }
