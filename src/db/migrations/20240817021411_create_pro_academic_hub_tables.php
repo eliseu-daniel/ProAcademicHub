@@ -65,7 +65,7 @@ final class CreateProAcademicHubTables extends AbstractMigration
             ->addColumn('data_inicio', 'date', ['null' => true])
             ->addColumn('data_termino', 'date', ['null' => true])
             ->addColumn('projeto_id', 'integer', ['null' => true])
-            ->addColumn('responsavel_id', 'integer', ['null' => true])
+            ->addColumn('usuario_id', 'integer', ['null' => true])
             ->addForeignKey('projeto_id', 'Projetos', 'projeto_id', ['delete' => 'SET_NULL', 'update' => 'NO_ACTION'])
             ->addForeignKey('responsavel_id', 'Usuarios', 'usuario_id', ['delete' => 'SET_NULL', 'update' => 'NO_ACTION'])
             ->create();

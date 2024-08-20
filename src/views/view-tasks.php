@@ -26,10 +26,10 @@
                 <?php foreach($tasks as $task) {?>
                 <tr>
                     <td>
-                        <?= $task->titulo ?>
+                        <?= $task->tituloT ?>
                     </td>
                     <td>
-                        <?= $task->descricao ?>
+                        <?= $task->descricaoT ?>
                     </td>
                     <td>
                         <?= $task->status ?>
@@ -41,10 +41,10 @@
                         <?= $task->data_termino ?>
                     </td>
                     <td>
-                        <?= $task->projeto_id ?>
+                        <?= $task->tituloP ?>
                     </td>
                     <td>
-                        <?= $task->responsavel_id?>
+                        <?= $task->nome?>
                     </td>
                     <td>
                         <a href="edit-task/<?= $task->tarefa_id?>">Editar</a>

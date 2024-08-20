@@ -40,7 +40,7 @@
                 <label for="projeto">Projeto</label>
                 <select name="projeto" id="projeto">
                     <?php foreach ($tasks as $task): ?>
-                        <option value="<?= $task->projeto_id?>"><?= $task->titulo ?></option>
+                        <option value="<?= $task->projeto_id?>"><?= $task->tituloP ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>

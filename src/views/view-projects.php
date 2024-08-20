@@ -24,7 +24,7 @@
                 <?php foreach ($projects as $projeto) {?>
                     <tr>
                         <td>
-                            <?= $projeto->titulo ?>
+                            <?= $projeto->tituloP ?>
                         </td>
                         <td>
                             <?= $projeto->descricao ?>

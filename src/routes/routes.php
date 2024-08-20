@@ -55,9 +55,9 @@ switch($request)
         $controller = new UserController();
         $controller->addMember();
         break;
-    case'/src/delete-member':
+    case(preg_match('/\/delete-task\/(\d+)/', $request, $matches) ? true : false):
         $controller = new UserController();
-        $controller->deleteMember();
+        $controller->deleteTask($matches[1]);
         break;
     case'/src/assign-task':
         $controller = new UserController();

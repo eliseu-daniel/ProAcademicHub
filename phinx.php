@@ -10,7 +10,7 @@ return [
         'development' => [
             'adapter' => 'mysql',
             'host' => '127.0.0.1',
-            'name' => 'ProAcademicHub',
+            'name' => 'proacademichub',
             'user' => 'root',
             'pass' => '',
             'port' => '3306',

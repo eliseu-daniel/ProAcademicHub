@@ -125,17 +125,22 @@ class UserController extends Controller
     {
         $this->authenticate();
         $tasks = $this->model->viewTasks();
+        $users = $this->model->getAllUsers($idGlobal);
         $this->view('view-tasks', [
-            'tasks' => $tasks
+            'tasks' => $tasks,
+            'user' => $users
         ]);
     }
 
     public function editTask($id)
     {
         $this->authenticate();
+        $idGlobal = $_SESSION['user_id'];
+        $users = $this->model->getAllUsers($idGlobal);
         $tasks = $this->model->editTaskView($id);
         $this->view('edit-task', [
-            'tasks' => $tasks
+            'tasks' => $tasks,
+            'users' => $users
         ]);
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $titulo = $_POST['tarefa'];
@@ -154,10 +159,10 @@ class UserController extends Controller
         $this->authenticate();
         $idGlobal = $_SESSION['user_id'];
         $users = $this->model->getAllUsers($idGlobal);
-        $tasks = $this->model->getAllUsers($idGlobal); // arrumar isso aqui
+        $projects = $this->model->getAllProjects($idGlobal);
         $this->view('add-task', [
             'users' => $users,
-            'tasks' => $tasks
+            'tasks' => $projects
         ]);
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $titulo = $_POST['titulo2'];
@@ -168,8 +173,11 @@ class UserController extends Controller
             $projeto = $_POST['projeto'];
             $aluno = $_POST['aluno1'];
             if ($this->model->addTasks($titulo, $descricao, $status, $dataInicio, $dataFim, $projeto, $aluno)) {
-                $_SESSION['success'][] = "Projeto criado com sucesso!";
-                $this->view('add-task');
+                // $_SESSION['success'][] = "Projeto criado com sucesso!";
+                $this->view('view-tasks', [
+                    'tasks' => $tasks,
+                    'user' => $users
+                ]);
             } else {
                 $_SESSION['erro'][]  = "Dados Inválidos";
             }
@@ -179,9 +187,8 @@ class UserController extends Controller
     public function deleteTask($id)
     {
         $this->authenticate();
-        if ($this->model->deleteTask($id)) {
-            $this->viewTasks();
-        }
+        $this->model->deleteTask($id);
+        $this->redirect('view-tasks');
     }
 
     public function addMember()

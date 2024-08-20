@@ -9,11 +9,11 @@ use PDOException;
 class Model
 {
     private $host = '127.0.0.1';
-    // private $dbName = 'proacademichub'; // usar no note
-    private $dbName = 'ProAcademicHub'; // usar no pc
+    private $dbName = 'proacademichub'; // usar no note
+    // private $dbName = 'ProAcademicHub'; // usar no pc
     private $userName = 'root';
-    // private $pwd = '91776213'; // usar no note
-    private $pwd = ''; // usar no pc
+    private $pwd = '91776213'; // usar no note
+    // private $pwd = ''; // usar no pc
 
     public function connection(string $sql, array $params = [])
     {

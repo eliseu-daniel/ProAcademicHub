@@ -35,7 +35,7 @@ class UserModel extends Model
     public function createProject($title, $description, $dateI, $dateF, $teacher)
     {
         if ($title != null && $description != null && $dateI != null && $dateF != null && $teacher != null) {
-            $sql = "INSERT INTO Projetos(titulo, descricao, data_inicio, data_termino, usuario_id) "
+            $sql = "INSERT INTO Projetos(tituloP, descricao, data_inicio, data_termino, usuario_id) "
                 . "VALUES (:title, :desc, :dateI, :dateF, :teacher)";
 
             $params = [
@@ -53,7 +53,7 @@ class UserModel extends Model
 
     public function viewProject()
     {
-        $sql = "SELECT Projetos.projeto_id, Projetos.titulo, Projetos.descricao, Projetos.data_inicio, Projetos.data_termino, Usuarios.nome 
+        $sql = "SELECT Projetos.projeto_id, Projetos.tituloP, Projetos.descricao, Projetos.data_inicio, Projetos.data_termino, Usuarios.nome 
             FROM Projetos
             INNER JOIN Usuarios ON Projetos.usuario_id = Usuarios.usuario_id ";
 
@@ -65,7 +65,7 @@ class UserModel extends Model
     public function editProjectView($id)
     {
 
-        $sql = "SELECT Projetos.projeto_id, Projetos.titulo, Projetos.descricao, Projetos.data_inicio, Projetos.data_termino, Usuarios.nome 
+        $sql = "SELECT Projetos.projeto_id, Projetos.tituloP, Projetos.descricao, Projetos.data_inicio, Projetos.data_termino, Usuarios.nome 
             FROM Projetos
             INNER JOIN Usuarios ON Projetos.usuario_id = Usuarios.usuario_id WHERE Projetos.projeto_id = :id";
 
@@ -80,7 +80,7 @@ class UserModel extends Model
 
     function editProject($id, $title, $description, $dateI, $dateF)
     {
-        $sql = "UPDATE Projetos SET titulo = :title, descricao = :desc, data_inicio = :dateI, data_termino = :dateF WHERE projeto_id = :id";
+        $sql = "UPDATE Projetos SET tituloP = :title, descricao = :desc, data_inicio = :dateI, data_termino = :dateF WHERE projeto_id = :id";
 
         $params = [
             ':title'   => $title,
@@ -108,7 +108,9 @@ class UserModel extends Model
 
     function viewTasks()
     {
-        $sql = "SELECT * FROM Tarefas";
+        $sql = "SELECT * FROM Tarefas 
+        INNER JOIN Usuarios ON Tarefas.usuario_id = Usuarios.usuario_id 
+        INNER JOIN Projetos ON Tarefas.projeto_id = Projetos.projeto_id";
 
         $result = $this->connection($sql);
 
@@ -117,7 +119,7 @@ class UserModel extends Model
 
     function getAllProjects($idGlobal)
     {
-        $sql = "SELECT projeto_id, titulo FROM Projetos WHERE usuario_id = :userid";
+        $sql = "SELECT projeto_id, tituloP FROM Projetos WHERE usuario_id = :userid";
 
         $params = [
             ':userid' => $idGlobal
@@ -128,8 +130,9 @@ class UserModel extends Model
 
     function addTasks($titulo, $descricao, $status, $dataInicio, $dataFim, $projeto, $aluno)
     {
-        $sql = "INSERT INTO Tarefas(titulo, descricao, status, data_inicio, data_termino, projeto_id, responsavel_id)
-         VALUES (:titulo, :descricao, :status, :data_inicio, :data_termino, :projeto_id, :responsavel_id)";
+        $sql = "INSERT INTO Tarefas(tituloT, descricao, status, data_inicio, data_termino, projeto_id, usuario_id) 
+        VALUES (:titulo, :descricao, :status, :data_inicio, :data_termino, :projeto_id, :usuario_id)";
+
         $params = [
             ':titulo' => $titulo,
             ':descricao' => $descricao,
@@ -137,7 +140,7 @@ class UserModel extends Model
             ':data_inicio' => $dataInicio,
             ':data_termino' => $dataFim,
             ':projeto_id' => $projeto,
-            ':responsavel_id' => $aluno
+            ':usuario_id' => $aluno
         ];
 
         $result = $this->connection($sql, $params);
@@ -160,7 +163,7 @@ class UserModel extends Model
 
     function editTask($id, $titulo, $aluno)
     {
-        $sql = "UPDATE Tarefas SET titulo = :titulo, responsavel_id = :aluno WHERE tarefa_id = :id";
+        $sql = "UPDATE Tarefas SET tituloT = :titulo, responsavel_id = :aluno WHERE tarefa_id = :id";
         $params = [
             ':titulo' => $titulo,
             ':aluno' => $aluno,
