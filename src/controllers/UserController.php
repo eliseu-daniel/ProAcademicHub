@@ -187,15 +187,6 @@ class UserController extends Controller
     public function addMember()
     {
         $this->authenticate();
-<<<<<<< HEAD
-        $users = $this->model->getAllUsers($idGlobal);
-        
-        $this->view('add-member', [
-            'users' => $users
-        ]);
-        
-
-=======
         $idGlobal = $_SESSION['user_id'];
         $users = $this->model->getAllUsers($idGlobal);
         $member = $this->model->getAllProjects($idGlobal);
@@ -210,7 +201,6 @@ class UserController extends Controller
                 $this->addMember();
             }
         }
->>>>>>> 4bd33a13b3fd344491a2f1f6bfbe2832d163b7e4
     }
 
     public function deleteMember()
