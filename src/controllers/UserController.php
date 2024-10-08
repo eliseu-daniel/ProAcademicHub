@@ -243,8 +243,14 @@ class UserController extends Controller
     public function assignTask()
     {
         $this->authenticate();
-        $this->view('assign-task');
-        //terminar a tela view
+        $idGlobal = $_SESSION['user_id'];
+        $users = $this->model->getAllUsers($idGlobal);
+        $projects = $this->model->viewTasks();
+        $this->view('assign-task', [
+            'users' => $users,
+            'tasks' => $projects
+        ]);
+        //quando adicionar os alunos, chamar os alunos 
     }
 
     public function comments()
